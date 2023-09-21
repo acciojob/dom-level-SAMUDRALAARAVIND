@@ -1,11 +1,12 @@
-const ul = document.getElementsByTagName("ul")[0] ;
-let displayText  ;
+const levelElement = document.getElementById("level");
+let level = 1 ;
 
-for(let i = 0 ; i < ul.children.length; i++){ 
-  let node = ul.children[i] ;
-  if(node.id == "level"){
-		displayText = "The level of the element is: "+(i+1)
+while(true){
+	if(levelElement.tagName === "HTML"){
+		break;
 	}
+	levelElement = levelElement.parentNode ;
+	level++;
 }
 
-alert(displayText)
+alert(`The level of the element is: ${level}`);
